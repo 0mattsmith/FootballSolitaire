@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Nunito', 'Fredoka', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #095826;
+}
+
+/* Cosy emerald baize felt backdrop matching the screenshots */
+.felt-table {
+  background:
+    radial-gradient(ellipse at 50% 25%, rgba(40, 185, 90, 0.35) 0%, rgba(11, 108, 46, 0.15) 55%, rgba(5, 61, 24, 0.55) 100%),
+    linear-gradient(180deg, #138a3f 0%, #0f7a37 50%, #0a632b 100%);
+}
+
+/* Subtle diamond / argyle card back patterns */
+.card-back-blue {
+  background-color: #2185ef;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.16) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(12, 65, 138, 0.22) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.12) 25%, #2185ef 25%);
+  background-position: 12px 0, 12px 0, 0 0, 0 0;
+  background-size: 24px 24px;
+  background-repeat: repeat;
+}
+
+.card-back-orange {
+  background-color: #ef831f;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(168, 63, 7, 0.22) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.12) 25%, #ef831f 25%);
+  background-position: 12px 0, 12px 0, 0 0, 0 0;
+  background-size: 24px 24px;
+  background-repeat: repeat;
+}
+
+.card-back-emerald {
+  background-color: #0ea568;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.18) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(4, 88, 52, 0.22) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.12) 25%, #0ea568 25%);
+  background-position: 12px 0, 12px 0, 0 0, 0 0;
+  background-size: 24px 24px;
+  background-repeat: repeat;
+}
+
+/* Ribbon banner notch like the Moves counter in the screenshots */
+.moves-ribbon {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* Rotated vertical text for fanned waste cards */
+.vertical-card-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@keyframes card-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px) rotate(-2deg);
+  }
+  45% {
+    transform: translateX(6px) rotate(2deg);
+  }
+  70% {
+    transform: translateX(-4px) rotate(-1deg);
+  }
+}
+
+.animate-card-shake {
+  animation: card-shake 0.34s ease-in-out;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes wiki-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wiki-fade-cell {
+  animation: wiki-fade-in 0.34s ease-out both;
+}

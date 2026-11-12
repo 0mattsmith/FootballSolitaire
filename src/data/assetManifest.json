@@ -1,0 +1,654 @@
+{
+  "league_premier_league": {
+    "badge": "/assets/leagues/league_premier_league.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_premier_league_trophy.png"
+  },
+  "league_championship": {
+    "badge": "/assets/leagues/league_championship.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_championship_trophy.png"
+  },
+  "league_league_one": {
+    "badge": "/assets/leagues/league_league_one.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_league_one_trophy.png"
+  },
+  "league_league_two": {
+    "badge": "/assets/leagues/league_league_two.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_league_two_trophy.png"
+  },
+  "league_la_liga": {
+    "badge": "/assets/leagues/league_la_liga.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_la_liga_trophy.png"
+  },
+  "league_bundesliga": {
+    "badge": "/assets/leagues/league_bundesliga.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_bundesliga_trophy.png"
+  },
+  "league_serie_a": {
+    "badge": "/assets/leagues/league_serie_a.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_serie_a_trophy.png"
+  },
+  "league_ligue_1": {
+    "badge": "/assets/leagues/league_ligue_1.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_ligue_1_trophy.png"
+  },
+  "league_eredivisie": {
+    "badge": "/assets/leagues/league_eredivisie.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_eredivisie_trophy.png"
+  },
+  "league_scottish_prem": {
+    "badge": "/assets/leagues/league_scottish_prem.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/league_scottish_prem_trophy.png"
+  },
+  "league_liga_portugal": {
+    "badge": "/assets/leagues/league_liga_portugal.png",
+    "source": "wikipedia"
+  },
+  "league_mls": {
+    "badge": "/assets/leagues/league_mls.png",
+    "source": "wikipedia"
+  },
+  "cup_champions_league": {
+    "badge": "/assets/cups/cup_champions_league.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_champions_league_trophy.png"
+  },
+  "cup_europa_league": {
+    "badge": "/assets/cups/cup_europa_league.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_europa_league_trophy.png"
+  },
+  "cup_fa_cup": {
+    "badge": "/assets/cups/cup_fa_cup.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_fa_cup_trophy.png"
+  },
+  "cup_efl_cup": {
+    "badge": "/assets/cups/cup_efl_cup.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_efl_cup_trophy.png"
+  },
+  "cup_world_cup": {
+    "badge": "/assets/cups/cup_world_cup.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/cup_world_cup_trophy.png"
+  },
+  "cup_euro": {
+    "badge": "/assets/cups/cup_euro.jpg",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_euro_trophy.png"
+  },
+  "cup_copa_america": {
+    "badge": "/assets/cups/cup_copa_america.png",
+    "source": "thesportsdb",
+    "trophy": "/assets/trophies/cup_copa_america_trophy.png"
+  },
+  "cup_copa_del_rey": {
+    "badge": "/assets/cups/cup_copa_del_rey.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_copa_del_rey_trophy.png"
+  },
+  "cup_dfb_pokal": {
+    "badge": "/assets/cups/cup_dfb_pokal.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_dfb_pokal_trophy.png"
+  },
+  "cup_coppa_italia": {
+    "badge": "/assets/cups/cup_coppa_italia.png",
+    "source": "wikipedia",
+    "trophy": "/assets/trophies/cup_coppa_italia_trophy.png"
+  },
+  "club_arsenal": {
+    "badge": "/assets/clubs/club_arsenal.png",
+    "source": "wikipedia"
+  },
+  "club_chelsea": {
+    "badge": "/assets/clubs/club_chelsea.png",
+    "source": "wikipedia"
+  },
+  "club_liverpool": {
+    "badge": "/assets/clubs/club_liverpool.png",
+    "source": "wikipedia"
+  },
+  "club_man_utd": {
+    "badge": "/assets/clubs/club_man_utd.png",
+    "source": "wikipedia"
+  },
+  "club_man_city": {
+    "badge": "/assets/clubs/club_man_city.png",
+    "source": "wikipedia"
+  },
+  "club_tottenham": {
+    "badge": "/assets/clubs/club_tottenham.png",
+    "source": "wikipedia"
+  },
+  "club_newcastle": {
+    "badge": "/assets/clubs/club_newcastle.png",
+    "source": "wikipedia"
+  },
+  "club_aston_villa": {
+    "badge": "/assets/clubs/club_aston_villa.png",
+    "source": "wikipedia"
+  },
+  "club_everton": {
+    "badge": "/assets/clubs/club_everton.png",
+    "source": "wikipedia"
+  },
+  "club_brighton": {
+    "badge": "/assets/clubs/club_brighton.png",
+    "source": "thesportsdb"
+  },
+  "club_fulham": {
+    "badge": "/assets/clubs/club_fulham.png",
+    "source": "wikipedia"
+  },
+  "club_west_ham": {
+    "badge": "/assets/clubs/club_west_ham.png",
+    "source": "wikipedia"
+  },
+  "club_leicester": {
+    "badge": "/assets/clubs/club_leicester.png",
+    "source": "wikipedia"
+  },
+  "club_blackburn": {
+    "badge": "/assets/clubs/club_blackburn.png",
+    "source": "wikipedia"
+  },
+  "club_nottingham_forest": {
+    "badge": "/assets/clubs/club_nottingham_forest.png",
+    "source": "wikipedia"
+  },
+  "club_ipswich": {
+    "badge": "/assets/clubs/club_ipswich.png",
+    "source": "wikipedia"
+  },
+  "club_leeds": {
+    "badge": "/assets/clubs/club_leeds.png",
+    "source": "wikipedia"
+  },
+  "club_sunderland": {
+    "badge": "/assets/clubs/club_sunderland.png",
+    "source": "wikipedia"
+  },
+  "club_burnley": {
+    "badge": "/assets/clubs/club_burnley.png",
+    "source": "wikipedia"
+  },
+  "club_sheff_utd": {
+    "badge": "/assets/clubs/club_sheff_utd.png",
+    "source": "wikipedia"
+  },
+  "club_wolves": {
+    "badge": "/assets/clubs/club_wolves.png",
+    "source": "wikipedia"
+  },
+  "club_bolton": {
+    "badge": "/assets/clubs/club_bolton.png",
+    "source": "wikipedia"
+  },
+  "club_west_brom": {
+    "badge": "/assets/clubs/club_west_brom.png",
+    "source": "wikipedia"
+  },
+  "club_preston": {
+    "badge": "/assets/clubs/club_preston.png",
+    "source": "wikipedia"
+  },
+  "club_huddersfield": {
+    "badge": "/assets/clubs/club_huddersfield.png",
+    "source": "wikipedia"
+  },
+  "club_derby": {
+    "badge": "/assets/clubs/club_derby.png",
+    "source": "wikipedia"
+  },
+  "club_coventry": {
+    "badge": "/assets/clubs/club_coventry.png",
+    "source": "wikipedia"
+  },
+  "club_norwich": {
+    "badge": "/assets/clubs/club_norwich.png",
+    "source": "wikipedia"
+  },
+  "club_middlesbrough": {
+    "badge": "/assets/clubs/club_middlesbrough.png",
+    "source": "wikipedia"
+  },
+  "club_southampton": {
+    "badge": "/assets/clubs/club_southampton.png",
+    "source": "wikipedia"
+  },
+  "club_crystal_palace": {
+    "badge": "/assets/clubs/club_crystal_palace.png",
+    "source": "wikipedia"
+  },
+  "club_crewe": {
+    "badge": "/assets/clubs/club_crewe.png",
+    "source": "wikipedia"
+  },
+  "club_wycombe": {
+    "badge": "/assets/clubs/club_wycombe.png",
+    "source": "wikipedia"
+  },
+  "club_charlton": {
+    "badge": "/assets/clubs/club_charlton.png",
+    "source": "wikipedia"
+  },
+  "club_wigan": {
+    "badge": "/assets/clubs/club_wigan.png",
+    "source": "wikipedia"
+  },
+  "club_real_madrid": {
+    "badge": "/assets/clubs/club_real_madrid.png",
+    "source": "wikipedia"
+  },
+  "club_barcelona": {
+    "badge": "/assets/clubs/club_barcelona.png",
+    "source": "wikipedia"
+  },
+  "club_atletico": {
+    "badge": "/assets/clubs/club_atletico.png",
+    "source": "wikipedia"
+  },
+  "club_bilbao": {
+    "badge": "/assets/clubs/club_bilbao.png",
+    "source": "wikipedia"
+  },
+  "club_valencia": {
+    "badge": "/assets/clubs/club_valencia.png",
+    "source": "wikipedia"
+  },
+  "club_real_sociedad": {
+    "badge": "/assets/clubs/club_real_sociedad.png",
+    "source": "wikipedia"
+  },
+  "club_bayern": {
+    "badge": "/assets/clubs/club_bayern.png",
+    "source": "wikipedia"
+  },
+  "club_dortmund": {
+    "badge": "/assets/clubs/club_dortmund.png",
+    "source": "wikipedia"
+  },
+  "club_leverkusen": {
+    "badge": "/assets/clubs/club_leverkusen.png",
+    "source": "wikipedia"
+  },
+  "club_rb_leipzig": {
+    "badge": "/assets/clubs/club_rb_leipzig.png",
+    "source": "wikipedia"
+  },
+  "club_stuttgart": {
+    "badge": "/assets/clubs/club_stuttgart.png",
+    "source": "wikipedia"
+  },
+  "club_werder": {
+    "badge": "/assets/clubs/club_werder.png",
+    "source": "wikipedia"
+  },
+  "club_ac_milan": {
+    "badge": "/assets/clubs/club_ac_milan.png",
+    "source": "wikipedia"
+  },
+  "club_inter": {
+    "badge": "/assets/clubs/club_inter.png",
+    "source": "wikipedia"
+  },
+  "club_juventus": {
+    "badge": "/assets/clubs/club_juventus.png",
+    "source": "wikipedia"
+  },
+  "club_napoli": {
+    "badge": "/assets/clubs/club_napoli.png",
+    "source": "wikipedia"
+  },
+  "club_roma": {
+    "badge": "/assets/clubs/club_roma.png",
+    "source": "wikipedia"
+  },
+  "club_lazio": {
+    "badge": "/assets/clubs/club_lazio.png",
+    "source": "wikipedia"
+  },
+  "club_atalanta": {
+    "badge": "/assets/clubs/club_atalanta.png",
+    "source": "wikipedia"
+  },
+  "club_psg": {
+    "badge": "/assets/clubs/club_psg.png",
+    "source": "wikipedia"
+  },
+  "club_marseille": {
+    "badge": "/assets/clubs/club_marseille.png",
+    "source": "wikipedia"
+  },
+  "club_lyon": {
+    "badge": "/assets/clubs/club_lyon.png",
+    "source": "wikipedia"
+  },
+  "club_monaco": {
+    "badge": "/assets/clubs/club_monaco.png",
+    "source": "wikipedia"
+  },
+  "club_lille": {
+    "badge": "/assets/clubs/club_lille.png",
+    "source": "wikipedia"
+  },
+  "club_ajax": {
+    "badge": "/assets/clubs/club_ajax.png",
+    "source": "wikipedia"
+  },
+  "club_psv": {
+    "badge": "/assets/clubs/club_psv.png",
+    "source": "wikipedia"
+  },
+  "club_sporting": {
+    "badge": "/assets/clubs/club_sporting.png",
+    "source": "wikipedia"
+  },
+  "club_benfica": {
+    "badge": "/assets/clubs/club_benfica.png",
+    "source": "wikipedia"
+  },
+  "club_porto": {
+    "badge": "/assets/clubs/club_porto.png",
+    "source": "wikipedia"
+  },
+  "club_dinamo_zagreb": {
+    "badge": "/assets/clubs/club_dinamo_zagreb.png",
+    "source": "wikipedia"
+  },
+  "club_la_galaxy": {
+    "badge": "/assets/clubs/club_la_galaxy.png",
+    "source": "wikipedia"
+  },
+  "club_inter_miami": {
+    "badge": "/assets/clubs/club_inter_miami.png",
+    "source": "wikipedia"
+  },
+  "club_ny_red_bulls": {
+    "badge": "/assets/clubs/club_ny_red_bulls.png",
+    "source": "wikipedia"
+  },
+  "club_nycfc": {
+    "badge": "/assets/clubs/club_nycfc.png",
+    "source": "wikipedia"
+  },
+  "club_lafc": {
+    "badge": "/assets/clubs/club_lafc.png",
+    "source": "wikipedia"
+  },
+  "club_al_nassr": {
+    "badge": "/assets/clubs/club_al_nassr.png",
+    "source": "wikipedia"
+  },
+  "club_cruzeiro": {
+    "badge": "/assets/clubs/club_cruzeiro.png",
+    "source": "wikipedia"
+  },
+  "stadium_old_trafford": {
+    "image": "/assets/stadiums/stadium_old_trafford.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_anfield": {
+    "image": "/assets/stadiums/stadium_anfield.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_emirates": {
+    "image": "/assets/stadiums/stadium_emirates.png",
+    "source": "wikipedia"
+  },
+  "stadium_stamford_bridge": {
+    "image": "/assets/stadiums/stadium_stamford_bridge.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_st_james_park": {
+    "image": "/assets/stadiums/stadium_st_james_park.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_villa_park": {
+    "image": "/assets/stadiums/stadium_villa_park.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_craven_cottage": {
+    "image": "/assets/stadiums/stadium_craven_cottage.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_etihad": {
+    "image": "/assets/stadiums/stadium_etihad.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_tottenham": {
+    "image": "/assets/stadiums/stadium_tottenham.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_goodison_park": {
+    "image": "/assets/stadiums/stadium_goodison_park.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_molineux": {
+    "image": "/assets/stadiums/stadium_molineux.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_wembley": {
+    "image": "/assets/stadiums/stadium_wembley.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_camp_nou": {
+    "image": "/assets/stadiums/stadium_camp_nou.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_bernabeu": {
+    "image": "/assets/stadiums/stadium_bernabeu.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_san_siro": {
+    "image": "/assets/stadiums/stadium_san_siro.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_allianz_arena": {
+    "image": "/assets/stadiums/stadium_allianz_arena.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_signal_iduna": {
+    "image": "/assets/stadiums/stadium_signal_iduna.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_parc_des_princes": {
+    "image": "/assets/stadiums/stadium_parc_des_princes.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_da_luz": {
+    "image": "/assets/stadiums/stadium_da_luz.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_cruyff_arena": {
+    "image": "/assets/stadiums/stadium_cruyff_arena.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_maracana": {
+    "image": "/assets/stadiums/stadium_maracana.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_azteca": {
+    "image": "/assets/stadiums/stadium_azteca.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_hampden": {
+    "image": "/assets/stadiums/stadium_hampden.jpg",
+    "source": "wikipedia"
+  },
+  "stadium_olympiastadion": {
+    "image": "/assets/stadiums/stadium_olympiastadion.png",
+    "source": "wikipedia"
+  },
+  "player_cristiano_ronaldo": {
+    "image": "/assets/players/player_cristiano_ronaldo_cutout.png",
+    "isCutout": true,
+    "source": "thesportsdb"
+  },
+  "player_lionel_messi": {
+    "image": "/assets/players/player_lionel_messi.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_david_beckham": {
+    "image": "/assets/players/player_david_beckham.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_thierry_henry": {
+    "image": "/assets/players/player_thierry_henry.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_zlatan": {
+    "image": "/assets/players/player_zlatan.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_wayne_rooney": {
+    "image": "/assets/players/player_wayne_rooney.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_alan_shearer": {
+    "image": "/assets/players/player_alan_shearer.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_mohamed_salah": {
+    "image": "/assets/players/player_mohamed_salah.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_harry_kane": {
+    "image": "/assets/players/player_harry_kane.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_sergio_aguero": {
+    "image": "/assets/players/player_sergio_aguero.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_didier_drogba": {
+    "image": "/assets/players/player_didier_drogba.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_erling_haaland": {
+    "image": "/assets/players/player_erling_haaland.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_gareth_bale": {
+    "image": "/assets/players/player_gareth_bale.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_luka_modric": {
+    "image": "/assets/players/player_luka_modric.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_eden_hazard": {
+    "image": "/assets/players/player_eden_hazard.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_andrea_pirlo": {
+    "image": "/assets/players/player_andrea_pirlo.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_ronaldo_nazario": {
+    "image": "/assets/players/player_ronaldo_nazario.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_ronaldinho": {
+    "image": "/assets/players/player_ronaldinho.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_zidane": {
+    "image": "/assets/players/player_zidane.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_pele": {
+    "image": "/assets/players/player_pele.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_maradona": {
+    "image": "/assets/players/player_maradona.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_cruyff": {
+    "image": "/assets/players/player_cruyff.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_george_best": {
+    "image": "/assets/players/player_george_best.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_beckenbauer": {
+    "image": "/assets/players/player_beckenbauer.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_baggio": {
+    "image": "/assets/players/player_baggio.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_totti": {
+    "image": "/assets/players/player_totti.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_del_piero": {
+    "image": "/assets/players/player_del_piero.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_maldini": {
+    "image": "/assets/players/player_maldini.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_gerrard": {
+    "image": "/assets/players/player_gerrard.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_mbappe": {
+    "image": "/assets/players/player_mbappe.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_kaka": {
+    "image": "/assets/players/player_kaka.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  },
+  "player_rodri": {
+    "image": "/assets/players/player_rodri.jpg",
+    "isCutout": false,
+    "source": "wikipedia"
+  }
+}

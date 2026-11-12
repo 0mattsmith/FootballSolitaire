@@ -1,0 +1,14 @@
+node_modules
+dist
+.DS_Store
+*.local
+*.tsbuildinfo
+android/.gradle
+android/app/build
+android/build
+android/local.properties
+android/keystore.properties
+android/release.keystore
+*.jks
+*.keystore
+releases
