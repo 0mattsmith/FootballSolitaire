@@ -111,6 +111,8 @@ public class AppUpdaterPlugin extends Plugin {
             String downloadedNotes = prefs.getString(KEY_DOWNLOADED_NOTES, "");
             boolean downloadedReady = downloadedPath != null
                     && new File(downloadedPath).exists()
+                    && downloadedVersion != null
+                    && !downloadedVersion.equals(versionName)
                     && downloadedCode > versionCode;
 
             JSObject res = new JSObject();
