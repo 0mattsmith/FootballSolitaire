@@ -70,6 +70,12 @@ describe('careerPathApi', () => {
 
     const excluded = searchPlayerOptions('Modric', new Set(['Luka Modrić']));
     expect(excluded.some((p) => p.name === 'Luka Modrić')).toBe(false);
+
+    const initialMatches = searchPlayerOptions('E. Hazard', new Set());
+    expect(initialMatches[0]?.name).toBe('Eden Hazard');
+
+    const typoMatches = searchPlayerOptions('Hazzard', new Set());
+    expect(typoMatches[0]?.name).toBe('Eden Hazard');
   });
 
   it('picks a deterministic daily Career Path challenge per UTC date', () => {

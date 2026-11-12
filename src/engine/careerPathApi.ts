@@ -59,6 +59,42 @@ export function normalizePlayerText(input: string): string {
     .trim();
 }
 
+function levenshteinDistance(a: string, b: string): number {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+
+  const dp: number[] = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = i - 1;
+    dp[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = dp[j];
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      dp[j] = Math.min(dp[j] + 1, dp[j - 1] + 1, prev + cost);
+      prev = tmp;
+    }
+  }
+  return dp[b.length];
+}
+
+function matchesInitialAndSurname(cleanQuery: string, normName: string): boolean {
+  const qParts = cleanQuery.split(' ');
+  const nParts = normName.split(' ');
+  if (qParts.length !== 2 || nParts.length < 2) return false;
+  const [qInitial, qRest] = qParts;
+  if (qInitial.length !== 1 || qRest.length < 2) return false;
+  return nParts[0].startsWith(qInitial) && nParts.slice(1).join(' ').startsWith(qRest);
+}
+
+export function isExactOptionMatch(query: string, option: AutocompletePlayerOption): boolean {
+  const clean = normalizePlayerText(query);
+  if (!clean) return false;
+  const normName = normalizePlayerText(option.name);
+  const aliases = (option.searchAliases ?? []).map(normalizePlayerText);
+  return normName === clean || aliases.includes(clean);
+}
+
 export function searchPlayerOptions(
   query: string,
   excludedNames: Set<string>,
@@ -71,19 +107,33 @@ export function searchPlayerOptions(
   for (const option of ALL_AUTOCOMPLETE_PLAYERS) {
     if (excludedNames.has(option.name)) continue;
     const normName = normalizePlayerText(option.name);
+    const nameParts = normName.split(' ');
     const aliases = (option.searchAliases ?? []).map(normalizePlayerText);
 
     let score = 0;
     if (normName === clean || aliases.includes(clean)) {
       score = 100;
+    } else if (nameParts.length > 1 && nameParts[nameParts.length - 1] === clean) {
+      score = 90;
+    } else if (matchesInitialAndSurname(clean, normName)) {
+      score = 85;
     } else if (
       normName.startsWith(clean) ||
-      normName.split(' ').some((part) => part.startsWith(clean)) ||
+      nameParts.some((part) => part.startsWith(clean)) ||
       aliases.some((a) => a.startsWith(clean))
     ) {
       score = 75;
     } else if (normName.includes(clean) || aliases.some((a) => a.includes(clean))) {
       score = 45;
+    } else if (clean.length >= 4) {
+      const maxTypos = clean.length >= 7 ? 2 : 1;
+      const minDist = Math.min(
+        levenshteinDistance(clean, normName),
+        ...nameParts.map((part) => levenshteinDistance(clean, part))
+      );
+      if (minDist <= maxTypos) {
+        score = 30 - minDist * 5;
+      }
     }
 
     if (score > 0) {

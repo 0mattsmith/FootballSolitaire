@@ -20,6 +20,7 @@ import {
   fetchLiveCareerPlayerData,
   fetchPlayerRevealPhoto,
   getDailyPuzzleInfo,
+  isExactOptionMatch,
   loadCareerPathStats,
   maskCareerToken,
   maskGoalsToken,
@@ -68,6 +69,7 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
   const [roundStatus, setRoundStatus] = useState<'playing' | 'won' | 'lost'>('playing');
   const [query, setQuery] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [highlightedIdx, setHighlightedIdx] = useState(0);
   const [shakeInput, setShakeInput] = useState(false);
   const [statusFeedback, setStatusFeedback] = useState<string | null>(null);
 
@@ -88,18 +90,13 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
     targetDiff: CareerDifficultyFilter,
     excludeId?: string
   ) => {
-    let basePlayer: CareerPathPlayer;
-    let pNum = 1;
-    let dKey = '';
-
-    if (targetMode === 'daily') {
-      const daily = getDailyPuzzleInfo(targetDiff);
-      basePlayer = daily.player;
-      pNum = daily.puzzleNumber;
-      dKey = daily.dateKey;
-    } else {
-      basePlayer = pickRandomCareerPlayer(targetDiff, excludeId);
-    }
+    const daily = getDailyPuzzleInfo(targetDiff);
+    const pNum = daily.puzzleNumber;
+    const dKey = daily.dateKey;
+    const basePlayer =
+      targetMode === 'daily'
+        ? daily.player
+        : pickRandomCareerPlayer(targetDiff, excludeId);
 
     setPlayMode(targetMode);
     setDifficulty(targetDiff);
@@ -113,6 +110,7 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
     setRoundStatus('playing');
     setQuery('');
     setDropdownOpen(false);
+    setHighlightedIdx(0);
     setStatusFeedback(null);
     setRevealDetails(null);
     setCopiedShare(false);
@@ -256,8 +254,37 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (suggestions.length > 0) {
-      handleGuessOption(suggestions[0]);
+    if (roundStatus !== 'playing' || !query.trim()) return;
+
+    if (suggestions.length === 0) {
+      setDropdownOpen(true);
+      setShakeInput(true);
+      setTimeout(() => setShakeInput(false), 380);
+      setStatusFeedback('No matching player — check spelling');
+      return;
+    }
+
+    const picked = suggestions[Math.min(highlightedIdx, suggestions.length - 1)];
+    if (suggestions.length === 1 || isExactOptionMatch(query, picked) || highlightedIdx > 0) {
+      handleGuessOption(picked);
+      return;
+    }
+
+    // Multiple players match a broad surname (e.g. Silva / Ronaldo): ask user to pick instead of burning a life
+    setDropdownOpen(true);
+    setStatusFeedback(`Pick which ${query.trim()} from the list above`);
+  };
+
+  const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!dropdownOpen || suggestions.length === 0) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightedIdx((prev) => (prev + 1) % suggestions.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightedIdx((prev) => (prev - 1 + suggestions.length) % suggestions.length);
+    } else if (e.key === 'Escape') {
+      setDropdownOpen(false);
     }
   };
 
@@ -749,6 +776,26 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
               </span>
             )}
           </div>
+
+          {/* Explicit Attempt History Chips */}
+          {attempts.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 px-1">
+              {attempts.map((a, idx) => (
+                <span
+                  key={`${idx}-${a.label}`}
+                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-extrabold border ${
+                    a.type === 'correct'
+                      ? 'bg-emerald-500/20 border-emerald-400/50 text-emerald-200'
+                      : a.type === 'skip'
+                      ? 'bg-amber-500/20 border-amber-400/40 text-amber-200'
+                      : 'bg-rose-500/20 border-rose-400/40 text-rose-200'
+                  }`}
+                >
+                  {a.type === 'correct' ? '✓' : a.type === 'skip' ? '↷' : '✗'} {a.label}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Bottom Interactive Guess Input OR Post-Round Actions */}
@@ -763,18 +810,27 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
                       No matching footballer found — check spelling
                     </div>
                   ) : (
-                    suggestions.map((opt) => (
+                    suggestions.map((opt, idx) => (
                       <button
                         key={`${opt.wikiTitle}-${opt.name}`}
                         type="button"
                         onClick={() => handleGuessOption(opt)}
-                        className="w-full px-3.5 py-2 text-left hover:bg-slate-800 border-b border-slate-800/80 last:border-b-0 flex items-center justify-between gap-2 cursor-pointer"
+                        className={`w-full px-3.5 py-2 text-left border-b border-slate-800/80 last:border-b-0 flex items-center justify-between gap-2 cursor-pointer transition ${
+                          idx === highlightedIdx
+                            ? 'bg-slate-800 ring-1 ring-inset ring-[#ceff27]/50'
+                            : 'hover:bg-slate-800/70'
+                        }`}
                       >
                         <span className="text-xs font-black uppercase tracking-wide text-white">
                           {opt.name}
                         </span>
-                        <span className="text-[10px] font-bold text-[#ceff27]">
+                        <span className="text-[10px] font-bold text-[#ceff27] flex items-center gap-1.5">
                           {opt.nationality}
+                          {idx === highlightedIdx && suggestions.length === 1 && (
+                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-white/10 text-white">
+                              Enter ↵
+                            </span>
+                          )}
                         </span>
                       </button>
                     ))
@@ -782,27 +838,39 @@ export const CareerPathModal: React.FC<CareerPathModalProps> = ({
                 </div>
               )}
 
-              <form onSubmit={handleFormSubmit} className="flex items-stretch gap-2">
+              <form onSubmit={handleFormSubmit} className="flex items-stretch gap-1.5">
                 <input
                   ref={inputRef}
                   type="text"
+                  autoComplete="off"
+                  enterKeyHint="send"
                   value={query}
                   onChange={(e) => {
                     setQuery(e.target.value);
+                    setHighlightedIdx(0);
                     setDropdownOpen(true);
                   }}
+                  onKeyDown={handleInputKeyDown}
                   onFocus={() => setDropdownOpen(true)}
                   placeholder={`Guess ${currentGuessNumber} of ${MAX_GUESSES} — Search player...`}
                   className={`flex-1 min-w-0 bg-white text-slate-900 placeholder:text-slate-400 font-bold text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 outline-none focus:ring-4 focus:ring-[#ceff27] ${
                     shakeInput ? 'animate-card-shake' : ''
                   }`}
                 />
+                {query.trim().length >= 2 && (
+                  <button
+                    type="submit"
+                    className="px-3.5 py-2.5 rounded-xl bg-gradient-to-b from-[#2fd46d] to-[#16a34a] hover:brightness-105 active:translate-y-0.5 text-white font-black text-xs uppercase tracking-wider shadow cursor-pointer shrink-0"
+                  >
+                    Guess
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={handleSkip}
-                  className="px-4 py-2.5 rounded-xl bg-[#e11d48] hover:bg-[#be123c] active:translate-y-0.5 text-white font-black text-xs uppercase tracking-wider shadow cursor-pointer shrink-0"
+                  className="px-3.5 py-2.5 rounded-xl bg-[#e11d48] hover:bg-[#be123c] active:translate-y-0.5 text-white font-black text-xs uppercase tracking-wider shadow cursor-pointer shrink-0"
                 >
-                  SKIP
+                  Skip
                 </button>
               </form>
             </div>

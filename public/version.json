@@ -1,6 +1,6 @@
 {
-    "version":  "1.0.1",
-    "versionCode":  2,
-    "releaseNotes":  "Career Path Challenge Wikipedia mini-game \u0026 self-updater hardening",
-    "publishedAt":  "2026-11-12T22:57:48Z"
+    "version":  "1.0.2",
+    "versionCode":  3,
+    "releaseNotes":  "Career Path Challenge: explicit Guess button, initial/typo matching \u0026 attempt chips",
+    "publishedAt":  "2026-11-12T23:17:24Z"
 }
